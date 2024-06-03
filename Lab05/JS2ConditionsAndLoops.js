@@ -44,7 +44,17 @@ Question 1: Driving the speed limit.. ? \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
+const speedLimit = 65;
+const mySpeed = 70;
+if (mySpeed > speedLimit) {
+  console.log("Slow Down! Mom is mad!");
+}
+else if (mySpeed === speedLimit) {
+   console.log("Everyone is happy!");
+   }
+else {
+   console.log("Speed up! Dad is mad!");
+   }
 
 
 /*-------------------------------------------------------*/
@@ -64,7 +74,15 @@ Question 2: Is it time to wake up for work? \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
+let alarmSet = true;
+let weekDay = true;
+if (alarmSet && weekDay) {
+  console.log("Sound Alarm! Time for work!");
+}
+else {
+   console.log("I can sleep in!");
+   }
+console.log(`--------------------------'`)
 
 /*-------------------------------------------------------*/
 
@@ -81,7 +99,14 @@ Question 3: Username & Password \n`);
  *	        - otherwise, print "Admin Access Denied"
  * 
  * ↓ YOUR CODE HERE ↓ */
-
+let username;
+let password;
+if (username === "Tommy123" && password === "12345" || username === "Timmy456" && password === "6789") {
+  console.log("Admin Login Successful");
+}
+else {
+   console.log("Admin Access Denied");
+   }
 
 
 /*-------------------------------------------------------*/
@@ -101,7 +126,29 @@ Question 4: Student Class \n`);
  *         Any other value should return "Error" to the console.
  * 
  * ↓ YOUR CODE HERE ↓ */
-
+let studentClass;
+let studentGrade = 9;
+if (studentGrade >= 0 && studentGrade <= 6) {
+  studentClass = "Elementary";
+}
+else if (studentGrade === 7 || studentGrade === 8) {
+   studentClass = "Middle";
+   }
+else if (studentGrade === 9) {
+   studentClass = "Freshman";
+   }
+else if (studentGrade === 10) {
+   studentClass = "Sophomore";
+   }
+else if (studentGrade === 11) {
+   studentClass = "Junior";
+   }
+else if (studentGrade === 12) {
+   studentClass = "Senior";
+   }
+else {
+   studentClass = "Error";
+   }
 
 
 /*-------------------------------------------------------*/
@@ -111,18 +158,38 @@ Question 5: Loops! \n`);
 
 /**
  * Step 1: Write a "for loop" that will iterate backwards and print 10 to -10.
- * Step 2: Write a "do/while" loop that will prints 1 through 50.
- * Step 3: Modify the previous "do/while" loop.
- *         Print the iterator if the remainder (% // modulus) is 0 when divisible by 4.
- * 
+
+
  * ↓ YOUR CODE HERE ↓ */
+console.log("Step 1: Write a 'for loop' that will iterate backwards and print 10 to -10.");
+for(let i = 10; i >= -10; i--) {
+   console.log(i);
+   }
+ //  * Step 2: Write a "do/while" loop that will prints 1 through 50.
+// * ↓ YOUR CODE HERE ↓ */
+console.log("Step 2: Write a 'do/while' loop that will prints 1 through 50.");
+let i = 1;
+do {
+   console.log(i);
+   i++;
+}
+while (i <= 50);
+// * Step 3: Modify the previous "do/while" loop.
+ //*         //Print the iterator if the remainder (% // modulus) is 0 when divisible by 4.
+//* 
+//* ↓ YOUR CODE HERE ↓ */
 
-
-
+console.log("Step 3: Modify the previous 'do/while' loop.");
+let j = 1;
+do {
+   if (j % 4 === 0) {
+      console.log(j);
+   }
+   j++;
+}while (j <= 50);
 /*-------------------------------------------------------*/
 
-console.log(`--------------------------
-Question 6: Debugging an infinite loop! \n`);
+console.log(`--------------------------Question 6: Debugging an infinite loop! \n`);
 
 /**
  * Step 1: Read through the written code below.
@@ -130,14 +197,12 @@ Question 6: Debugging an infinite loop! \n`);
  * Step 2: Uncomment out to test
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-   /*    
-   for (let i = 11; i > 10; i++) { 
-      console.log(i);   
+   for (let i = 0; i < 10; i++) { 
+      console.log("not infinite: ", i );   
    } 
-  */
-
+  
 
 
 
 console.log('-----------Finished------------')
+console.log('--------------------------')

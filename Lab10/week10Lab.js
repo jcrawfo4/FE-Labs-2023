@@ -1,3 +1,4 @@
+
 /* 
    Copyright (c) 2023 Promineo Tech
    Author:  Promineo Tech Academic Team
@@ -42,13 +43,35 @@ Part 1: Create a form with only JavaScript`)
            Do the same steps, appending a label/input for Email, and a submit button to your form.
  * ↓ YOUR CODE HERE ↓ */
 
-// console.log(myForm)
+
+let myForm = document.createElement('form');
+let myLabel = document.createElement('label');
+let myInput = document.createElement('input');
+myLabel.innerHTML = 'Name';
+myForm.append(myLabel);
+myForm.append(myInput);
+document.body.append(myForm);
+console.log(myForm);
 //Question: Besides changing the innerHTML, what other HTML things can we change using JavaScript?
-//Answer:
+//Answer:Changing attribute values: You can change the values of HTML attributes using JavaScript. For example, you can change the src attribute of an img tag to change the displayed image.
+
+// Adding or removing classes: You can add or remove CSS classes to/from HTML elements. This can be used to dynamically change the style of an element.
+
+// Adding or removing elements: You can add new elements to the DOM or remove existing ones. This can be used to dynamically change the content of a webpage.
+
+// Modifying the CSS styles: You can directly modify the CSS styles of an element using the style property.
+
+// Handling events: You can add event listeners to HTML elements to make the webpage interactive. For example, you can add a click event listener to a button to perform an action when the button is clicked.
+
+// Changing the text content: You can change the text content of an element using the textContent property.
+
+// Manipulating form inputs: You can get or set the value of form inputs, check if a checkbox is checked, etc.
+
+// Changing the document structure: You can move elements around in the DOM, creating complex changes to the document structure.
 
 /*------------------------ Styling a form with only JavaScript------------------------*/
 console.log(`-------------------------- 
-Part 2: Styling our form with only JavaScript`)
+Part 2: Styling our form with only JavaScript`);
 
 /**
  *  Hint: element.style.cssProperty = ''
@@ -59,10 +82,14 @@ Part 2: Styling our form with only JavaScript`)
  *  Step 3: Give your form a display of flex, a flex-direction of column, and a max-width of 250px
  *
  * ↓ YOUR CODE HERE ↓ */
+myForm.style.backgroundColor = 'hotpink';
+myForm.style.fontColor = 'black';
+myForm.style.display = 'flex';
+myForm.style.flexDirection = 'column';
 
 //Question: Do you prefer styling with JavaScript or CSS?
 //Answer:
-
+console.log("I prefer to style with JS");
 /*------------------------ Creating a table with only JavaScript ------------------------*/
 console.log(`-------------------------- 
 Part 3: Creating a table with only JavaScript`)
@@ -72,6 +99,7 @@ Part 3: Creating a table with only JavaScript`)
 
  * Step 1: Uncomment out the console.log(myTable) below.       
  * Step 2: Create 4 new table elements: <table>, <tr>, <td>, <td>. Store them in variables using let
+ 
  * Step 3: One of your TD elements innerHTML should be 'Name', the other should be 'Email'.
  * Step 4: Append them in the same way that we create a table with HTML.
  * Step 5: Append the finished <table> to your <body>. It should now be on your website. 
@@ -80,10 +108,39 @@ Part 3: Creating a table with only JavaScript`)
  * Final Step: Style your table using JavaScript starting with a border. You may need to target more element/nodes than we did with myTable.
  * ↓ YOUR CODE HERE ↓ */
 
-// console.log(myTable)
+console.log(myTable)
+let myTable = document.createElement('table')
+let myRow = document.createElement('tr')
+let Name = document.createElement('td')
+let Email = document.createElement('td')
+Name.innerHTML = 'Name'
+Email.innerHTML = 'Email'
+myRow.append(Name)
+myRow.append(Email)
+myTable.append(myRow)
+document.body.append(myTable)
+myTable.style.border = '9px solid black'
+
+
 //Question: While this is clearly a more round-about way of making a table, how can using JavaScript in this way
 //          more beneficial than HTML?
 //Answer:
+// While this is clearly a more round-about way of making a table, how can using JavaScript in this way more beneficial than HTML?
+
+// GitHub Copilot
+// Using JavaScript to create HTML elements like a table can be more beneficial than static HTML in several ways:
+
+// Dynamic Content: JavaScript allows you to create dynamic content. For example, you can create a table based on data fetched from an API, and update the table whenever the data changes.
+
+// User Interaction: JavaScript can create and modify elements in response to user actions. For example, you could add a row to a table when a user submits a form.
+
+// Conditional Rendering: With JavaScript, you can conditionally create and add elements to the DOM based on certain conditions or logic. This is not possible with static HTML.
+
+// Code Reusability: If you need to create similar tables in multiple places, you can write a JavaScript function to create a table, and reuse that function wherever you need a table.
+
+// Integration with Frameworks/Libraries: Modern JavaScript frameworks and libraries (like React, Angular, Vue.js) use JavaScript to create and manage DOM elements, allowing for more complex applications with state management and component-based architecture.
+
+// Remember, while JavaScript provides these powerful capabilities, it's also important to consider performance and accessibility. Over-reliance on JavaScript for tasks that could be done with static HTML can lead to slower page load times and can make your site less accessible to users with disabilities or users on slow internet connections.
 
 /*------------------------ Changing our body background on click ------------------------*/
 console.log(`-------------------------- 
@@ -104,6 +161,10 @@ Part 4: Changing our background on click`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
+let myButton = document.getElementById('myButton');
+myButton.addEventListener('click', function(){
+    myButton.style.backgroundColor = 'neon';
+})
 //Question: What other event listeners are there?
 //             Try them out by replacing 'click' in your function above!
 //Answer:
@@ -119,3 +180,6 @@ console.log(`-----------Finished------------`)
  *    and append a new <tr> containing those values to your tBody element.
  *    Look into event.preventDefault(). Buttons inside of forms have a default setting to refresh the page.
  */
+
+
+console.log(myForm)

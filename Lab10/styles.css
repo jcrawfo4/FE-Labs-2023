@@ -1,0 +1,12 @@
+form {
+  /* Step 1: Change the background color of your form to your favorite color. */
+  background-color: #fcdbea; /* Replace with your favorite color */
+
+  /* Step 2: Change the font color so it's readable over your background color */
+  color: #000000; /* Replace with a color that is readable over your background color */
+
+  /* Step 3: Give your form a display of flex, a flex-direction of column, and a max-width of 250px */
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+}

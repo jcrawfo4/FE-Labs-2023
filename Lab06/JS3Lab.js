@@ -31,7 +31,7 @@
 console.log(`--------------------------
 Question 1: alphabetString \n`);
 
-let alphabetString = 'abcdefghijklmnopqrstuvwxyz'; 
+let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
 
 /*
  * Using the provided code above:
@@ -39,10 +39,8 @@ let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
-
+let alphabetArr = alphabetString.split('');
+console.log("alphabetArr ", alphabetArr);
 
 
 // Question 2: alphabetArray
@@ -58,10 +56,8 @@ let alphabetArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
-
+let str = alphabetArray.reverse().join('');
+console.log(str);
 
 
 // Question 3: array1
@@ -82,9 +78,14 @@ let array1 = [1, 5, 6, 9, 10, 14];
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
-
-
+console.log("step 1 : ", array1);
+console.log("step 2 - 3rd element: ", array1[2]);
+console.log("step 3 - last element : ", array1[array1.length - 1]);
+array1.push(16);
+array1.push(3);
+console.log("step 4 : ", array1);
+console.log("step 5: ", array1[2]);
+console.log("step 6: ", array1[array1.length - 1]);
 
 
 // Question 4: Todo List
@@ -99,13 +100,18 @@ Question 4: Todo List \n`);
  * Step 4: Create another array called yourTodoList, add two todo items, and print the array to the console
  * Step 5: Create another array called ourTodoList, then concatenate (combine) myTodoList and yourTodoList into the array ourTodoList, there's more than one way to do this.(See documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat  OR  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
  * 
- * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
-
-
+let myTodoList = [];
+let newItems = ["mow the lawn", "clean the grill", "weed the garden"]
+for (let i = 0; i < newItems.length; i++) {
+    myTodoList.push(newItems[i]);
+}
+myTodoList.splice(1, 1);
+console.log("myTodoList: ", myTodoList);
+let yourTodoList = ["grill pork chops", "delete dos"];
+console.log("yourTodoList: ", yourTodoList);
+let ourTodoList = myTodoList.concat(yourTodoList);
+console.log("ourTodoList", ourTodoList);
 
 
 // Question 5: isEven 
@@ -122,20 +128,18 @@ Question 5: isEven  \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
+function isEven(num) {
+    return num % 2 === 0;
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 //! Sample test cases for the above isEven function (uncomment to test)
-//console.log(isEven(2));   //should return true
-//console.log(isEven(3));   //should return false
-//console.log(isEven(4));   //should return true
-//console.log(isEven(5));   //should return false
-
-
+console.log(isEven(2));   //should return true
+console.log(isEven(3));   //should return false
+console.log(isEven(4));   //should return true
+console.log(isEven(5));   //should return false
 
 
 // Question 6: addingMachine
@@ -151,18 +155,21 @@ Question 6: addingMachine \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
+function addingMachine(x) {
+    let sum = 0;
+    for (let i = 0; i < x.length; i++) {
+        sum = sum + x[i];
+    }
+    return sum;
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 //! Sample test cases for the above isEven function (uncomment to test)
-//console.log(addingMachine([1, 2, 3, 4, 5]));                    //should return 15
-//console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));    //should return 55
-//console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])); //should return 120
-
+console.log(addingMachine([1, 2, 3, 4, 5]));                    //should return 15
+console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));    //should return 55
+console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])); //should return 120
 
 
 // Question 7: reverse 
@@ -184,26 +191,41 @@ Question 7: reverse \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
+function reverse(x) {
+    if (typeof x == "boolean") {
+        return !x
+    }
+    if (typeof x == "number") {
+        return x.toString().split('').reverse().join('');
+    }
+    if (typeof x == "string") {
+        return x.split('').reverse().join('')
+    }
+    if (Array.isArray(x)) {
+        let rvs = []
+        for (let i = x.length - 1; i > -1; i--) {
+            rvs.push(reverse(x[i]));
+            //console.log(reverse(x[i]));
+        }
+        return rvs;
+    }
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 // Sample test cases for the above reverse function (uncomment to test)
-//console.log(reverse(1234));         //should return 4321
-//console.log(reverse('hello'));      //should return 'olleh'
-//console.log(reverse(true));         //should return false
-//console.log(reverse([1, 2, 3, 4])); //should return [4, 3, 2, 1]
-
-
+console.log(reverse(1234));         //should return 4321
+console.log(reverse('hello'));      //should return 'olleh'
+console.log(reverse(true));         //should return false
+console.log(reverse([1, 2, 3, 4])); //should return [4, 3, 2, 1]
+console.log(reverse(["are", "you", "going", "to", "the", "mall", "later?"]))
 
 
 // Question 8: removeElements 
 console.log(`--------------------------
 Question 8: removeElements \n`);
-    
+
 /*
  * Step 1:  Create a function called removeElements - the purpose of this function is to remove all elements from an array
         * This function will have one parameter (array)
@@ -217,16 +239,18 @@ Question 8: removeElements \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
+function removeElements(arr) {
+    while (arr.length) {
+        arr.pop();
+    }
+    return arr;
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 // Sample test cases for the above removeElements function (uncomment to test)
-//console.log(removeElements([1, 2, 3, 4, 5])); //should return [] (an empty array)
-
+console.log(removeElements([1, 2, 3, 4, 5])); //should return [] (an empty array)
 
 
 // Question 9: whichArrayIsLonger 
@@ -244,14 +268,21 @@ Question 9: whichArrayIsLonger  \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
+function whichArrayIsLonger(arr1, arr2) {
+    if (arr1.length > arr2.length) {
+        return arr1;
+    }
+    if (arr1.length === arr2.length) {
+        return false;
+    } else {
+        return arr2;
+    }
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 // Sample test cases for the above whichArrayIsLonger function (uncomment to test)
-//console.log(whichArrayIsLonger([1, 2, 3, 4, 5], [1, 2, 3, 4]));    //should return [1, 2, 3, 4, 5]
-//console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4, 5, 6])); ///should return [1, 2, 3, 4, 5, 6]
-//console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4]));       //should return false (because they are the same length)
+console.log(whichArrayIsLonger([1, 2, 3, 4, 5], [1, 2, 3, 4]));    //should return [1, 2, 3, 4, 5]
+console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4, 5, 6])); ///should return [1, 2, 3, 4, 5, 6]
+console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4]));       //should return false (because they are the same length)
