@@ -108,7 +108,7 @@ Part 3: Creating a table with only JavaScript`)
  * Final Step: Style your table using JavaScript starting with a border. You may need to target more element/nodes than we did with myTable.
  * ↓ YOUR CODE HERE ↓ */
 
-console.log(myTable)
+
 let myTable = document.createElement('table')
 let myRow = document.createElement('tr')
 let Name = document.createElement('td')
@@ -120,7 +120,7 @@ myRow.append(Email)
 myTable.append(myRow)
 document.body.append(myTable)
 myTable.style.border = '9px solid black'
-
+console.log(myTable)
 
 //Question: While this is clearly a more round-about way of making a table, how can using JavaScript in this way
 //          more beneficial than HTML?
@@ -161,10 +161,20 @@ Part 4: Changing our background on click`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
-let myButton = document.getElementById('myButton');
-myButton.addEventListener('click', function(){
-    myButton.style.backgroundColor = 'neon';
-})
+document.addEventListener('DOMContentLoaded', function() {
+   let myButton = document.getElementById('myButton');
+   if (myButton) {
+       console.log('Button found:', myButton); // Debugging log
+       myButton.addEventListener('click', function() {
+           console.log('Button clicked'); // Debugging log
+           myButton.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+       });
+   } else {
+       console.error('Button not found');
+   }
+});
+
+
 //Question: What other event listeners are there?
 //             Try them out by replacing 'click' in your function above!
 //Answer:
@@ -180,6 +190,23 @@ console.log(`-----------Finished------------`)
  *    and append a new <tr> containing those values to your tBody element.
  *    Look into event.preventDefault(). Buttons inside of forms have a default setting to refresh the page.
  */
-
-
+let divButton = document.createElement('button')
+divButton.innerHTML = 'Hello'
+document.body.append(divButton)
+divButton.addEventListener('click', function() {
+   if (divButton.innerHTML === 'Hello') {
+       divButton.innerHTML = 'World'
+   } else {
+       divButton.innerHTML = 'Hello'
+   }
+}) 
 console.log(myForm)
+
+window.onload = function() {
+    myImage.addEventListener('mouseout', function() {
+        myImage.style.visibility = 'visible';
+    });
+   myImage.addEventListener('mouseover', function() {
+       myImage.style.visibility = 'hidden';
+   });
+}
