@@ -57,7 +57,11 @@ describe("JS6 Lab Tests:", () => {
         
         expect(addTwoNumbers(2, 3)).to.not.equal(7);
       });
-    });
+
+      it("#Should fail", () => {
+        expect(addTwoNumbers(9, 17)).to.not.equal(2222);
+      }
+    );});
   });
   /*--------------------------NEW TESTS BELOW-------------------------------*/
 

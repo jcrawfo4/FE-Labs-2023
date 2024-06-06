@@ -47,10 +47,26 @@ Part 1: Create a form with only JavaScript`)
 let myForm = document.createElement('form');
 let myLabel = document.createElement('label');
 let myInput = document.createElement('input');
+
 myLabel.innerHTML = 'Name';
+
 myForm.append(myLabel);
 myForm.append(myInput);
+
 document.body.append(myForm);
+
+let myEmailLabel = document.createElement('label');
+let myEmailInput = document.createElement('input');
+
+myEmailLabel.innerHTML = 'Email';
+
+myForm.append(myEmailLabel);
+myForm.append(myEmailInput);
+
+let mySubmitButton = document.createElement('button');
+mySubmitButton.innerHTML = 'Submit';
+mySubmitButton.style.backgroundColor = 'aquamarine';
+myForm.append(mySubmitButton);
 console.log(myForm);
 //Question: Besides changing the innerHTML, what other HTML things can we change using JavaScript?
 //Answer:Changing attribute values: You can change the values of HTML attributes using JavaScript. For example, you can change the src attribute of an img tag to change the displayed image.
@@ -86,6 +102,7 @@ myForm.style.backgroundColor = 'hotpink';
 myForm.style.fontColor = 'black';
 myForm.style.display = 'flex';
 myForm.style.flexDirection = 'column';
+myForm.style.maxWidth = '300px';
 
 //Question: Do you prefer styling with JavaScript or CSS?
 //Answer:
@@ -114,7 +131,7 @@ let myRow = document.createElement('tr')
 let Name = document.createElement('td')
 let Email = document.createElement('td')
 Name.innerHTML = 'Name'
-Email.innerHTML = 'Email'
+Email = 'Email'
 myRow.append(Name)
 myRow.append(Email)
 myTable.append(myRow)
