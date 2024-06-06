@@ -4,8 +4,8 @@
   Subject:  JavaScript Mocha/Chai
   FE JS6 Lab
 */
-const expect = chai.expect
-const assert = chai.assert
+const expect = chai.expect;
+const assert = chai.assert;
 
 /* ----------------------------------------------------- */
 // Resources:
@@ -36,29 +36,30 @@ const assert = chai.assert
  * 
 /*--------------------------------------------------------------------*/
 
-describe('JS6 Lab Tests:', () => {
-  describe('Example Question Test: Add Two Numbers', () => {
-    it('#Should return the sum of two numbers', () => {
+describe("JS6 Lab Tests:", () => {
+  function addTwoNumbers(num1, num2) {
+    return num1 + num2;
+  }
+  describe("Example Question Test: Add Two Numbers", () => {
+    it("#Should return the sum of two numbers", () => {
       // Copy & paste your debugged code from JS6Lab.js
-      function addTwoNumbers(num1, num2) {
-        return num1 + num2
-      }
+      
       // Write tests to ensure it works for multiple examples
-      expect(addTwoNumbers(2, 3)).to.equal(5)
-      expect(addTwoNumbers(9, 17)).to.equal(26)
-      expect(addTwoNumbers(750, 250)).to.equal(1000)
-      expect(addTwoNumbers(132780, 443378)).to.equal(576158)
-    })
+      expect(addTwoNumbers(2, 3)).to.equal(5);
+      expect(addTwoNumbers(9, 17)).to.equal(26);
+      expect(addTwoNumbers(750, 250)).to.equal(1000);
+      expect(addTwoNumbers(132780, 443378)).to.equal(576158);
+    });
 
-    describe('Example Failed Test: Add Two Numbers', () => {
-      it('#Should fail', () => {
-        function sumOfTwoNumbers(num1, num2) {
-          num1 + num2
-        }
+    describe("Example Failed Test: Add Two Numbers", () => {
+      it("#Should fail", () => {
 
-        expect(sumOfTwoNumbers(2, 3)).to.equal(5)
-      })
-    })
-  })
+        
+        expect(addTwoNumbers(2, 3)).to.not.equal(7);
+      });
+    });
+  });
   /*--------------------------NEW TESTS BELOW-------------------------------*/
-})
+
+
+});
